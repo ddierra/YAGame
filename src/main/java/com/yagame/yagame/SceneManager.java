@@ -49,6 +49,7 @@ public class SceneManager extends Parent {
     public static void startGame(Stage gameStage) {
         Group gameRoot = new Group();
         Pane gameWorld = new Pane();
+        Render.renderRoad(gameWorld);
         gameWorld.setPrefSize(16000, 16000);
         gameRoot.getChildren().add(gameWorld);
 
