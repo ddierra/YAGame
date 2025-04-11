@@ -8,7 +8,7 @@ public class Render {
 
     //Road Renderer
     public static void renderRoad(Pane world){
-        Image roadTile = new Image("A:\\YAGame\\src\\main\\resources\\images\\Road.png");
+        Image roadTile = new Image(Render.class.getResource("/images/Road.png").toExternalForm());
         int tileSize = 64;
         int roadWidth = 10;
         int roadLength = 100;
@@ -25,3 +25,4 @@ public class Render {
         }
     }
 }
+
