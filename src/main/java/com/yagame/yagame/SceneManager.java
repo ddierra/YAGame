@@ -5,6 +5,8 @@ import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -54,9 +56,8 @@ public class SceneManager extends Parent {
         gameRoot.getChildren().add(gameWorld);
 
         Player player = new Player(100, 100);
-        Circle playerCircle = new Circle(player.getCenterX(), player.getCenterY(), 20);
-        playerCircle.setFill(Color.color(Math.random(), Math.random(), Math.random()));
-        gameWorld.getChildren().add(playerCircle);
+        ImageView JPView = Render.renderJP(player);
+        gameWorld.getChildren().add(JPView);
 
         Jenny jenny = new Jenny(200, 200);
         Circle jennyCircle = new Circle(jenny.getCenterX(), jenny.getCenterY(), 20);
@@ -87,8 +88,8 @@ public class SceneManager extends Parent {
                 if (nextX >= 0 && nextX <= 16000 && nextY >= 0 && nextY <= 16000) {
                     player.setCenterX((int) nextX);
                     player.setCenterY((int) nextY);
-                    playerCircle.setCenterX(nextX);
-                    playerCircle.setCenterY(nextY);
+                    JPView.setX(nextX);
+                    JPView.setY(nextY);
 
                     // Smooth camera movement
                     gameWorld.setTranslateX(-nextX + 400);

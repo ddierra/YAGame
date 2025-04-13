@@ -4,6 +4,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
+import java.util.Objects;
+
 public class Render {
 
     //Road Renderer
@@ -23,6 +25,19 @@ public class Render {
                 world.getChildren().add(tile);
             }
         }
+    }
+
+
+    public static ImageView renderJP(GameCharacter player){
+        Image playerJP = new Image(Render.class.getResource("/images/Idle-JP.png").toExternalForm());
+
+        ImageView playerView = new ImageView(playerJP);
+        playerView.setFitWidth(64);
+        playerView.setFitHeight(64);
+        playerView.setX(player.getCenterX());
+        playerView.setY(player.getCenterY());
+
+        return playerView;
     }
 }
 
