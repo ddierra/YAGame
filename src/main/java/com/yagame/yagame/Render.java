@@ -32,8 +32,8 @@ public class Render {
         Image playerJP = new Image(Render.class.getResource("/images/Idle-JP.png").toExternalForm());
 
         ImageView playerView = new ImageView(playerJP);
-        playerView.setFitWidth(64);
-        playerView.setFitHeight(64);
+        playerView.setFitWidth(128);
+        playerView.setFitHeight(128);
         playerView.setX(player.getCenterX());
         playerView.setY(player.getCenterY());
 
